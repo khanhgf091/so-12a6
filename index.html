@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><title>Sổ điểm danh 12A6</title></head>
+<body style="margin:0;background:#0B0F14;color:#E8EEF7;font-family:-apple-system,sans-serif"><p id="b" style="padding:24px">Đang mở sổ điểm danh…</p>
+<script>
+(async function(){
+  try{
+    const [a,c]=await Promise.all([
+      fetch("app.b64.0.txt?v=3").then(r=>r.text()),
+      fetch("app.b64.1.txt?v=3").then(r=>r.text())
+    ]);
+    const bin=Uint8Array.from(atob((a+c).replace(/\s/g,"")),x=>x.charCodeAt(0));
+    const stream=new Response(bin).body.pipeThrough(new DecompressionStream("gzip"));
+    const html=await new Response(stream).text();
+    document.open(); document.write(html); document.close();
+  }catch(e){
+    document.getElementById("b").textContent="Lỗi mở sổ: "+e;
+  }
+})();
+</script></body></html>
