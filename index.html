@@ -2,30 +2,27 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sổ điểm danh 12A6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sổ 12A6 — cần cập nhật file</title>
+<style>
+body{margin:0;font-family:-apple-system,sans-serif;background:#0B0F14;color:#E8EEF7;padding:24px;line-height:1.5}
+a{color:#2DD4BF}
+.card{background:#151B24;border-radius:14px;padding:16px;margin:16px 0}
+</style>
 </head>
-<body style="margin:0;font-family:-apple-system,sans-serif;background:#0B0F14;color:#E8EEF7">
-<p style="padding:24px">Đang mở sổ điểm danh…</p>
-<script>
-(async function(){
-  const urls=[
-    'https://cdn.jsdelivr.net/gh/khanhgf091/so-12a6@b5663eb07099b315115fcf2582ebda842ed80a8d/index.html',
-    'https://raw.githubusercontent.com/khanhgf091/so-12a6/b5663eb07099b315115fcf2582ebda842ed80a8d/index.html'
-  ];
-  let html=null;
-  for(const u of urls){
-    try{
-      const r=await fetch(u);
-      if(r.ok){ html=await r.text(); break; }
-    }catch(e){}
-  }
-  if(!html){
-    document.body.innerHTML='<p style="padding:24px">Chưa tải được. Vào GitHub upload lại file index.html mới nhất.</p>';
-    return;
-  }
-  document.open(); document.write(html); document.close();
-})();
-</script>
+<body>
+<h1>Sổ điểm danh 12A6</h1>
+<div class="card">
+<p>Bản trên GitHub chưa có file mới (xuất Excel tuần/tháng, quay tuần trước).</p>
+<p><b>Cách cập nhật (điện thoại):</b></p>
+<ol>
+<li>Tải file <code>index.html</code> từ Grok (tin nhắn có nút tải).</li>
+<li>Vào <a href="https://github.com/khanhgf091/so-12a6">github.com/khanhgf091/so-12a6</a></li>
+<li>Bấm file <code>index.html</code> → menu <b>…</b> → <b>Delete file</b> → Commit</li>
+<li><b>Add file → Upload files</b> → chọn file vừa tải → Commit</li>
+<li>Đợi 1 phút, mở lại <a href="https://khanhgf091.github.io/so-12a6/">khanhgf091.github.io/so-12a6</a></li>
+</ol>
+</div>
+<p class="muted">Kênh tự động không gửi được file ~80KB một lần; cần Upload tay một lần.</p>
 </body>
 </html>
